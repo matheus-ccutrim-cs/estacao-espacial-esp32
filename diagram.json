@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "author": "Matheus",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-v1", "id": "esp32", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-ntc-temperature-sensor", "id": "ntc1", "top": -125, "left": 300, "attrs": { "temperature": "27", "beta": "3950" } },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": 170, "left": 270, "attrs": { "pins": "i2c" } },
+    { "type": "wokwi-led", "id": "ledGreen", "top": -125, "left": -190, "attrs": { "color": "green" } },
+    { "type": "wokwi-led", "id": "ledYellow", "top": -65, "left": -190, "attrs": { "color": "yellow" } },
+    { "type": "wokwi-led", "id": "ledRed", "top": -5, "left": -190, "attrs": { "color": "red" } },
+    { "type": "wokwi-resistor", "id": "rGreen", "top": -115, "left": -100, "rotate": 90, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "rYellow", "top": -55, "left": -100, "rotate": 90, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "rRed", "top": 5, "left": -100, "rotate": 90, "attrs": { "value": "220" } },
+    { "type": "wokwi-buzzer", "id": "buzzer1", "top": 105, "left": -180, "attrs": { "volume": "0.2" } },
+    { "type": "wokwi-pushbutton", "id": "button1", "top": 190, "left": -180, "attrs": { "color": "blue", "label": "SILENCIAR" } }
+  ],
+  "connections": [
+    [ "esp32:3V3", "ntc1:VCC", "red", [] ],
+    [ "esp32:GND.1", "ntc1:GND", "black", [] ],
+    [ "esp32:D34", "ntc1:OUT", "green", [] ],
+    [ "esp32:VIN", "lcd1:VCC", "red", [] ],
+    [ "esp32:GND.2", "lcd1:GND", "black", [] ],
+    [ "esp32:D21", "lcd1:SDA", "green", [] ],
+    [ "esp32:D22", "lcd1:SCL", "blue", [] ],
+    [ "esp32:D25", "rGreen:1", "green", [] ],
+    [ "rGreen:2", "ledGreen:A", "green", [] ],
+    [ "ledGreen:C", "esp32:GND.1", "black", [] ],
+    [ "esp32:D26", "rYellow:1", "yellow", [] ],
+    [ "rYellow:2", "ledYellow:A", "yellow", [] ],
+    [ "ledYellow:C", "esp32:GND.1", "black", [] ],
+    [ "esp32:D27", "rRed:1", "red", [] ],
+    [ "rRed:2", "ledRed:A", "red", [] ],
+    [ "ledRed:C", "esp32:GND.1", "black", [] ],
+    [ "esp32:D14", "buzzer1:1", "purple", [] ],
+    [ "buzzer1:2", "esp32:GND.1", "black", [] ],
+    [ "esp32:D13", "button1:1.l", "blue", [] ],
+    [ "button1:2.l", "esp32:GND.1", "black", [] ]
+  ],
+  "dependencies": {}
+}
