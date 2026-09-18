@@ -71,6 +71,6 @@ estacao-ambiental-esp32/
 └── README.md          # documentação
 ```
 
-## Resumo para apresentação
+## Resumo do projeto
 
-“A aplicação é um monitor de temperatura baseado em ESP32. O sensor NTC realiza uma leitura analógica a cada dois segundos. O programa classifica a temperatura em normal, atenção ou crítico. O resultado aparece no LCD e é representado pelos LEDs. Em uma situação crítica, o buzzer é acionado, mas pode ser silenciado pelo botão por 30 segundos. O sistema não usa MQTT nem depende de conexão com a internet.”
+A aplicação é um monitor de temperatura baseado em ESP32. O sensor NTC realiza uma leitura analógica a cada dois segundos. O programa classifica a temperatura em normal, atenção ou crítico. O resultado aparece no LCD e é representado pelos LEDs. Em uma situação crítica, o buzzer é acionado, mas pode ser silenciado pelo botão por 30 segundos. O sistema não usa MQTT nem depende de conexão com a internet.
